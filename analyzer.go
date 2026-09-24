@@ -364,8 +364,13 @@ func eolFinding(t *facts.Technology, today time.Time) *finding.Finding {
 		sev = finding.Low
 	}
 	conf := finding.ConfidenceHigh
+	title := fmt.Sprintf("%s %s is end-of-life", t.Name, key)
 	if !exact {
+		// A range such as ">=18" declares the oldest supported version,
+		// not what runs in production: worth knowing, rarely urgent.
 		conf = finding.ConfidenceMedium
+		sev = finding.Low
+		title = fmt.Sprintf("Declared minimum %s %s is end-of-life", t.Name, key)
 	}
 	desc := fmt.Sprintf("%s %s (release line %s) %s. It no longer receives security fixes, so known vulnerabilities in it stay unpatched.", t.Name, t.Version, key, when)
 	if p.Note != "" {
@@ -379,7 +384,7 @@ func eolFinding(t *facts.Technology, today time.Time) *finding.Finding {
 	}
 	return &finding.Finding{
 		Dimension: finding.DimEvolution, Category: "end-of-life", Severity: sev, Confidence: conf,
-		Title:                 fmt.Sprintf("%s %s is end-of-life", t.Name, key),
+		Title:                 title,
 		Description:           desc,
 		Evidence:              ev,
 		Component:             t.Name,
