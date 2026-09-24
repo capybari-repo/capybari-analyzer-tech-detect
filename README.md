@@ -13,7 +13,7 @@ It flags **end-of-life** runtimes and frameworks (Node.js, Python, Go, Ruby, PHP
 | Provides | `technologies` evidence |
 | Scores | Technology Currency |
 | Network / AI | none / none |
-| Rules | [`rules/technologies.yaml`](rules/technologies.yaml) (≈120 signatures), [`rules/eol.yaml`](rules/eol.yaml) |
+| Rules | [`rules/technologies.yaml`](rules/technologies.yaml) (≈120 signatures), [`capybari-core/lifecycle/eol.yaml`](https://github.com/capybari/capybari-core/blob/main/lifecycle/eol.yaml) (shared) |
 
 Contributions to the rule files are welcome. Every EOL date must cite its source.
 

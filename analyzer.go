@@ -24,6 +24,7 @@ import (
 	"github.com/capybari/capybari-core/facts"
 	"github.com/capybari/capybari-core/finding"
 	"github.com/capybari/capybari-core/fsutil"
+	"github.com/capybari/capybari-core/lifecycle"
 )
 
 //go:embed capability.yaml
@@ -31,9 +32,6 @@ var capabilityYAML []byte
 
 //go:embed rules/technologies.yaml
 var technologiesYAML []byte
-
-//go:embed rules/eol.yaml
-var eolYAML []byte
 
 var capability = analyzer.MustParseCapability(capabilityYAML)
 
@@ -56,23 +54,8 @@ type Signature struct {
 	} `yaml:"match"`
 }
 
-// EOLTable is the bundled end-of-life data.
-type EOLTable struct {
-	AsOf     string                `yaml:"as_of"`
-	Products map[string]EOLProduct `yaml:"products"`
-}
-
-// EOLProduct is the lifecycle of one product.
-type EOLProduct struct {
-	Source string            `yaml:"source"`
-	Kind   string            `yaml:"kind"`
-	Note   string            `yaml:"note"`
-	Cycles map[string]string `yaml:"cycles"`
-}
-
 var (
 	signatures = mustYAML[[]Signature](technologiesYAML)
-	eolTable   = mustYAML[EOLTable](eolYAML)
 )
 
 func mustYAML[T any](b []byte) T {
@@ -214,7 +197,7 @@ func (a *Analyzer) Analyze(ctx context.Context, in *analyzer.Input) (*analyzer.R
 		Findings: findings,
 		Summary:  summary,
 		Limitations: []string{
-			fmt.Sprintf("End-of-life data is bundled (as of %s) so detection works offline; newer releases or policy changes after that date are not reflected.", eolTable.AsOf),
+			fmt.Sprintf("End-of-life data is bundled (as of %s) so detection works offline; newer releases or policy changes after that date are not reflected.", lifecycle.AsOf()),
 		},
 	}
 	return res, nil
@@ -362,53 +345,15 @@ func cleanVersion(v string) string {
 
 func isRangeish(v string) bool { return strings.ContainsAny(v, "^~<>*| ,") }
 
-// cycleKey returns the release-cycle key for a product and version.
-func cycleKey(product, version string) (key string, exact bool) {
-	v := strings.TrimSpace(version)
-	if v == "" {
-		return "", false
-	}
-	exact = !isRangeish(v)
-	if product == ".NET" {
-		return strings.ToLower(strings.SplitN(v, ";", 2)[0]), exact
-	}
-	nums := regexp.MustCompile(`\d+`).FindAllString(v, 3)
-	if len(nums) == 0 {
-		return "", false
-	}
-	p := eolTable.Products[product]
-	// Try major.minor first (Python 3.7, Go 1.19, Django 4.2), then major.
-	if len(nums) >= 2 {
-		if _, ok := p.Cycles[nums[0]+"."+nums[1]]; ok {
-			return nums[0] + "." + nums[1], exact
-		}
-	}
-	return nums[0], exact
-}
-
 func eolFinding(t *facts.Technology, today time.Time) *finding.Finding {
-	p, ok := eolTable.Products[t.Name]
+	st, ok := lifecycle.Check(t.Name, t.Version, today)
 	if !ok {
 		return nil
 	}
-	key, exact := cycleKey(t.Name, t.Version)
-	if key == "" {
-		return nil
-	}
-	date, ok := p.Cycles[key]
-	if !ok {
-		return nil
-	}
-	var when string
-	switch {
-	case date == "unsupported":
-		when = "no longer supported by its maintainers"
-	default:
-		d, err := time.Parse("2006-01-02", date)
-		if err != nil || !today.After(d) {
-			return nil
-		}
-		when = "reached end-of-life on " + date
+	p, key, date, exact := st.Product, st.Cycle, st.Date, st.Exact
+	when := "reached end-of-life on " + date
+	if date == "unsupported" {
+		when = "is no longer supported by its maintainers"
 	}
 	t.EOL = date
 	sev := finding.Medium

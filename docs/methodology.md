@@ -12,7 +12,7 @@ Languages with ≥ 5 % of source lines (or ≥ 500 lines) and the runtimes from 
 
 ## End-of-life
 
-`rules/eol.yaml` holds release-line end dates from https://endoflife.date and vendor pages, stamped `as_of`. A detected version maps to its release line (major.minor for Python, Go and Django; major for Node.js and Angular; target framework for .NET). If the line's date is in the past, or it is marked `unsupported`, a finding is raised:
+`capybari-core/lifecycle/eol.yaml` (shared with the website capabilities) holds release-line end dates from https://endoflife.date and vendor pages, stamped `as_of`. A detected version maps to its release line (major.minor for Python, Go and Django; major for Node.js and Angular; target framework for .NET). If the line's date is in the past, or it is marked `unsupported`, a finding is raised:
 
 | Product kind | Severity |
 |---|---|
