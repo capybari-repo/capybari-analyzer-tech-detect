@@ -17,7 +17,7 @@ execution:
   network: none
   ai: none
 privacy: Runs entirely locally. End-of-life data is bundled with the tool; nothing is looked up online and nothing leaves the machine.
-methodology: https://github.com/capybari/capybari-analyzer-tech-detect/blob/main/docs/methodology.md
+methodology: https://github.com/capybari-repo/capybari-analyzer-tech-detect/blob/main/docs/methodology.md
 follow_ups:
   - capability: vulns
     reason: End-of-life components were found; check the dependency tree for known vulnerabilities.

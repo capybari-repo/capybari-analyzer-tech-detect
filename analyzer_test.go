@@ -6,12 +6,12 @@ import (
 	"testing"
 	"time"
 
-	fingerprint "github.com/capybari/capybari-analyzer-fingerprint"
-	techdetect "github.com/capybari/capybari-analyzer-tech-detect"
-	"github.com/capybari/capybari-core/analyzer"
-	"github.com/capybari/capybari-core/analyzertest"
-	"github.com/capybari/capybari-core/facts"
-	"github.com/capybari/capybari-schemas"
+	fingerprint "github.com/capybari-repo/capybari-analyzer-fingerprint"
+	techdetect "github.com/capybari-repo/capybari-analyzer-tech-detect"
+	"github.com/capybari-repo/capybari-core/analyzer"
+	"github.com/capybari-repo/capybari-core/analyzertest"
+	"github.com/capybari-repo/capybari-core/facts"
+	"github.com/capybari-repo/capybari-schemas"
 	"gopkg.in/yaml.v3"
 )
 

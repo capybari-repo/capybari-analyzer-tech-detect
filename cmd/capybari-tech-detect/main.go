@@ -2,8 +2,8 @@
 package main
 
 import (
-	techdetect "github.com/capybari/capybari-analyzer-tech-detect"
-	"github.com/capybari/capybari-core/standalone"
+	techdetect "github.com/capybari-repo/capybari-analyzer-tech-detect"
+	"github.com/capybari-repo/capybari-core/standalone"
 )
 
 var version = "dev"

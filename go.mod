@@ -1,11 +1,11 @@
-module github.com/capybari/capybari-analyzer-tech-detect
+module github.com/capybari-repo/capybari-analyzer-tech-detect
 
 go 1.27.1
 
 require (
-	github.com/capybari/capybari-analyzer-fingerprint v0.0.0
-	github.com/capybari/capybari-core v0.0.0
-	github.com/capybari/capybari-schemas v0.0.0
+	github.com/capybari-repo/capybari-analyzer-fingerprint v0.0.0
+	github.com/capybari-repo/capybari-core v0.0.0
+	github.com/capybari-repo/capybari-schemas v0.0.0
 	gopkg.in/yaml.v3 v3.0.1
 )
 
@@ -16,8 +16,8 @@ require (
 	golang.org/x/text v0.42.0 // indirect
 )
 
-replace github.com/capybari/capybari-core => ../capybari-core
+replace github.com/capybari-repo/capybari-core => ../capybari-core
 
-replace github.com/capybari/capybari-schemas => ../capybari-schemas
+replace github.com/capybari-repo/capybari-schemas => ../capybari-schemas
 
-replace github.com/capybari/capybari-analyzer-fingerprint => ../capybari-analyzer-fingerprint
+replace github.com/capybari-repo/capybari-analyzer-fingerprint => ../capybari-analyzer-fingerprint

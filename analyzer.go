@@ -20,11 +20,11 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/capybari/capybari-core/analyzer"
-	"github.com/capybari/capybari-core/facts"
-	"github.com/capybari/capybari-core/finding"
-	"github.com/capybari/capybari-core/fsutil"
-	"github.com/capybari/capybari-core/lifecycle"
+	"github.com/capybari-repo/capybari-core/analyzer"
+	"github.com/capybari-repo/capybari-core/facts"
+	"github.com/capybari-repo/capybari-core/finding"
+	"github.com/capybari-repo/capybari-core/fsutil"
+	"github.com/capybari-repo/capybari-core/lifecycle"
 )
 
 //go:embed capability.yaml
