@@ -1,0 +1,50 @@
+{
+  "findings": [
+    "high high Node.js 12 is end-of-life",
+    "low high Moment.js is in maintenance mode"
+  ],
+  "technologies": [
+    {
+      "Name": "JavaScript",
+      "Category": "language",
+      "Version": "",
+      "EOL": ""
+    },
+    {
+      "Name": "Node.js",
+      "Category": "runtime",
+      "Version": "12.22.0",
+      "EOL": "2022-04-30"
+    },
+    {
+      "Name": "Express",
+      "Category": "web-framework",
+      "Version": "4.16.0",
+      "EOL": ""
+    },
+    {
+      "Name": "MySQL",
+      "Category": "database",
+      "Version": "2.18.1",
+      "EOL": ""
+    },
+    {
+      "Name": "Docker",
+      "Category": "infrastructure",
+      "Version": "",
+      "EOL": ""
+    },
+    {
+      "Name": "Lodash",
+      "Category": "library",
+      "Version": "4.17.15",
+      "EOL": ""
+    },
+    {
+      "Name": "Moment.js",
+      "Category": "library",
+      "Version": "2.29.1",
+      "EOL": ""
+    }
+  ]
+}

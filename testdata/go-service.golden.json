@@ -1,0 +1,19 @@
+{
+  "findings": [
+    "high high Go 1.19 is end-of-life"
+  ],
+  "technologies": [
+    {
+      "Name": "Go",
+      "Category": "language",
+      "Version": "1.19",
+      "EOL": "2023-08-08"
+    },
+    {
+      "Name": "Gin",
+      "Category": "web-framework",
+      "Version": "1.7.0",
+      "EOL": ""
+    }
+  ]
+}

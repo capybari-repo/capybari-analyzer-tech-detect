@@ -1,0 +1,117 @@
+# Technology signatures for repositories. Community contributions welcome.
+# match keys: npm, pypi, go, maven, nuget, packagist, rubygems, cargo (package
+# names), files (path suffixes), images (container image names).
+- {name: React, category: ui-framework, website: https://react.dev, match: {npm: [react]}}
+- {name: Next.js, category: web-framework, website: https://nextjs.org, match: {npm: [next], files: [next.config.js, next.config.mjs, next.config.ts]}}
+- {name: Vue.js, category: ui-framework, website: https://vuejs.org, match: {npm: [vue]}}
+- {name: Nuxt, category: web-framework, website: https://nuxt.com, match: {npm: [nuxt], files: [nuxt.config.ts, nuxt.config.js]}}
+- {name: Angular, category: ui-framework, website: https://angular.dev, match: {npm: ["@angular/core"], files: [angular.json]}}
+- {name: AngularJS, category: ui-framework, website: https://angularjs.org, match: {npm: [angular]}}
+- {name: Svelte, category: ui-framework, website: https://svelte.dev, match: {npm: [svelte]}}
+- {name: SvelteKit, category: web-framework, website: https://svelte.dev/docs/kit, match: {npm: ["@sveltejs/kit"]}}
+- {name: Solid, category: ui-framework, website: https://www.solidjs.com, match: {npm: [solid-js]}}
+- {name: Preact, category: ui-framework, website: https://preactjs.com, match: {npm: [preact]}}
+- {name: Astro, category: web-framework, website: https://astro.build, match: {npm: [astro]}}
+- {name: Remix, category: web-framework, website: https://remix.run, match: {npm: ["@remix-run/react"]}}
+- {name: Gatsby, category: web-framework, website: https://www.gatsbyjs.com, match: {npm: [gatsby]}}
+- {name: jQuery, category: library, website: https://jquery.com, match: {npm: [jquery]}}
+- {name: Express, category: web-framework, website: https://expressjs.com, match: {npm: [express]}}
+- {name: Fastify, category: web-framework, website: https://fastify.dev, match: {npm: [fastify]}}
+- {name: Koa, category: web-framework, website: https://koajs.com, match: {npm: [koa]}}
+- {name: NestJS, category: web-framework, website: https://nestjs.com, match: {npm: ["@nestjs/core"]}}
+- {name: Hapi, category: web-framework, website: https://hapi.dev, match: {npm: ["@hapi/hapi", hapi]}}
+- {name: Electron, category: desktop-framework, website: https://www.electronjs.org, match: {npm: [electron]}}
+- {name: React Native, category: mobile-framework, website: https://reactnative.dev, match: {npm: [react-native]}}
+- {name: Expo, category: mobile-framework, website: https://expo.dev, match: {npm: [expo]}}
+- {name: TypeScript, category: language, website: https://www.typescriptlang.org, match: {npm: [typescript], files: [tsconfig.json]}}
+- {name: Tailwind CSS, category: ui, website: https://tailwindcss.com, match: {npm: [tailwindcss], files: [tailwind.config.js, tailwind.config.ts, tailwind.config.cjs]}}
+- {name: Bootstrap, category: ui, website: https://getbootstrap.com, match: {npm: [bootstrap]}}
+- {name: Vite, category: build, website: https://vitejs.dev, match: {npm: [vite], files: [vite.config.ts, vite.config.js]}}
+- {name: webpack, category: build, website: https://webpack.js.org, match: {npm: [webpack], files: [webpack.config.js]}}
+- {name: Babel, category: build, website: https://babeljs.io, match: {npm: ["@babel/core"], files: [.babelrc, babel.config.js]}}
+- {name: ESLint, category: quality, website: https://eslint.org, match: {npm: [eslint], files: [.eslintrc, .eslintrc.js, .eslintrc.json, eslint.config.js, eslint.config.mjs]}}
+- {name: Prettier, category: quality, website: https://prettier.io, match: {npm: [prettier], files: [.prettierrc, .prettierrc.json]}}
+- {name: Jest, category: testing, website: https://jestjs.io, match: {npm: [jest], files: [jest.config.js, jest.config.ts]}}
+- {name: Vitest, category: testing, website: https://vitest.dev, match: {npm: [vitest]}}
+- {name: Mocha, category: testing, website: https://mochajs.org, match: {npm: [mocha]}}
+- {name: Cypress, category: testing, website: https://www.cypress.io, match: {npm: [cypress], files: [cypress.config.js, cypress.config.ts]}}
+- {name: Playwright, category: testing, website: https://playwright.dev, match: {npm: ["@playwright/test"], pypi: [playwright], files: [playwright.config.ts]}}
+- {name: Prisma, category: orm, website: https://www.prisma.io, match: {npm: [prisma, "@prisma/client"], files: [schema.prisma]}}
+- {name: Sequelize, category: orm, website: https://sequelize.org, match: {npm: [sequelize]}}
+- {name: TypeORM, category: orm, website: https://typeorm.io, match: {npm: [typeorm]}}
+- {name: Mongoose, category: orm, website: https://mongoosejs.com, match: {npm: [mongoose]}}
+- {name: Drizzle ORM, category: orm, website: https://orm.drizzle.team, match: {npm: [drizzle-orm]}}
+- {name: GraphQL, category: api, website: https://graphql.org, match: {npm: [graphql], pypi: [graphene, strawberry-graphql], go: [github.com/99designs/gqlgen]}}
+- {name: Apollo, category: api, website: https://www.apollographql.com, match: {npm: ["@apollo/server", apollo-server, "@apollo/client"]}}
+- {name: tRPC, category: api, website: https://trpc.io, match: {npm: ["@trpc/server"]}}
+- {name: Socket.IO, category: realtime, website: https://socket.io, match: {npm: [socket.io]}}
+- {name: Redux, category: library, website: https://redux.js.org, match: {npm: [redux, "@reduxjs/toolkit"]}}
+- {name: Lodash, category: library, website: https://lodash.com, match: {npm: [lodash]}}
+- {name: Moment.js, category: library, website: https://momentjs.com, match: {npm: [moment]}}
+- {name: Axios, category: library, website: https://axios-http.com, match: {npm: [axios]}}
+- {name: Stripe, category: payments, website: https://stripe.com, match: {npm: [stripe, "@stripe/stripe-js"], pypi: [stripe], go: [github.com/stripe/stripe-go/v76, github.com/stripe/stripe-go/v78, github.com/stripe/stripe-go/v79], rubygems: [stripe], packagist: [stripe/stripe-php]}}
+- {name: AWS SDK, category: cloud-sdk, website: https://aws.amazon.com/tools/, match: {npm: [aws-sdk, "@aws-sdk/client-s3"], pypi: [boto3, botocore], go: [github.com/aws/aws-sdk-go, github.com/aws/aws-sdk-go-v2]}}
+- {name: Google Cloud SDK, category: cloud-sdk, website: https://cloud.google.com/sdk, match: {npm: ["@google-cloud/storage"], pypi: [google-cloud-storage], go: [cloud.google.com/go]}}
+- {name: Azure SDK, category: cloud-sdk, website: https://azure.github.io/azure-sdk/, match: {npm: ["@azure/storage-blob"], pypi: [azure-storage-blob]}}
+- {name: Firebase, category: backend-service, website: https://firebase.google.com, match: {npm: [firebase, firebase-admin], pypi: [firebase-admin]}}
+- {name: Supabase, category: backend-service, website: https://supabase.com, match: {npm: ["@supabase/supabase-js"], pypi: [supabase]}}
+- {name: Sentry, category: monitoring, website: https://sentry.io, match: {npm: ["@sentry/node", "@sentry/react", "@sentry/browser", "@sentry/nextjs"], pypi: [sentry-sdk], go: [github.com/getsentry/sentry-go]}}
+- {name: OpenTelemetry, category: monitoring, website: https://opentelemetry.io, match: {npm: ["@opentelemetry/api"], pypi: [opentelemetry-api], go: [go.opentelemetry.io/otel]}}
+- {name: OpenAI SDK, category: ai, website: https://platform.openai.com, match: {npm: [openai], pypi: [openai]}}
+- {name: Anthropic SDK, category: ai, website: https://docs.anthropic.com, match: {npm: ["@anthropic-ai/sdk"], pypi: [anthropic], go: [github.com/anthropics/anthropic-sdk-go]}}
+- {name: LangChain, category: ai, website: https://www.langchain.com, match: {npm: [langchain], pypi: [langchain]}}
+- {name: Django, category: web-framework, website: https://www.djangoproject.com, match: {pypi: [django], files: [manage.py]}}
+- {name: Flask, category: web-framework, website: https://flask.palletsprojects.com, match: {pypi: [flask]}}
+- {name: FastAPI, category: web-framework, website: https://fastapi.tiangolo.com, match: {pypi: [fastapi]}}
+- {name: Starlette, category: web-framework, website: https://www.starlette.io, match: {pypi: [starlette]}}
+- {name: Celery, category: queue, website: https://docs.celeryq.dev, match: {pypi: [celery]}}
+- {name: SQLAlchemy, category: orm, website: https://www.sqlalchemy.org, match: {pypi: [sqlalchemy]}}
+- {name: Pydantic, category: library, website: https://docs.pydantic.dev, match: {pypi: [pydantic]}}
+- {name: Jinja, category: templating, website: https://jinja.palletsprojects.com, match: {pypi: [jinja2]}}
+- {name: Requests, category: library, website: https://requests.readthedocs.io, match: {pypi: [requests]}}
+- {name: Gunicorn, category: server, website: https://gunicorn.org, match: {pypi: [gunicorn]}}
+- {name: Uvicorn, category: server, website: https://www.uvicorn.org, match: {pypi: [uvicorn]}}
+- {name: pytest, category: testing, website: https://pytest.org, match: {pypi: [pytest], files: [pytest.ini, conftest.py]}}
+- {name: NumPy, category: data, website: https://numpy.org, match: {pypi: [numpy]}}
+- {name: pandas, category: data, website: https://pandas.pydata.org, match: {pypi: [pandas]}}
+- {name: PyTorch, category: ai, website: https://pytorch.org, match: {pypi: [torch]}}
+- {name: TensorFlow, category: ai, website: https://www.tensorflow.org, match: {pypi: [tensorflow]}}
+- {name: scikit-learn, category: ai, website: https://scikit-learn.org, match: {pypi: [scikit-learn]}}
+- {name: Gin, category: web-framework, website: https://gin-gonic.com, match: {go: [github.com/gin-gonic/gin]}}
+- {name: Echo, category: web-framework, website: https://echo.labstack.com, match: {go: [github.com/labstack/echo/v4, github.com/labstack/echo]}}
+- {name: Fiber, category: web-framework, website: https://gofiber.io, match: {go: [github.com/gofiber/fiber/v2, github.com/gofiber/fiber/v3]}}
+- {name: Chi, category: web-framework, website: https://go-chi.io, match: {go: [github.com/go-chi/chi/v5, github.com/go-chi/chi]}}
+- {name: Gorilla Mux, category: web-framework, website: https://github.com/gorilla/mux, match: {go: [github.com/gorilla/mux]}}
+- {name: gRPC, category: api, website: https://grpc.io, match: {go: [google.golang.org/grpc], pypi: [grpcio], npm: ["@grpc/grpc-js"], files: [.proto]}}
+- {name: GORM, category: orm, website: https://gorm.io, match: {go: [gorm.io/gorm]}}
+- {name: Cobra, category: cli-framework, website: https://cobra.dev, match: {go: [github.com/spf13/cobra]}}
+- {name: Spring Boot, category: web-framework, website: https://spring.io/projects/spring-boot, match: {maven: [spring-boot-starter, spring-boot-starter-web, spring-boot-starter-parent, spring-boot-starter-webflux]}}
+- {name: Hibernate, category: orm, website: https://hibernate.org, match: {maven: [hibernate-core]}}
+- {name: JUnit, category: testing, website: https://junit.org, match: {maven: [junit, junit-jupiter, junit-jupiter-api]}}
+- {name: Log4j, category: library, website: https://logging.apache.org/log4j/, match: {maven: [log4j-core, log4j]}}
+- {name: ASP.NET Core, category: web-framework, website: https://dotnet.microsoft.com/apps/aspnet, match: {nuget: [aspnetcore, microsoft.aspnetcore.app]}}
+- {name: Entity Framework Core, category: orm, website: https://learn.microsoft.com/ef/core/, match: {nuget: [microsoft.entityframeworkcore]}}
+- {name: Laravel, category: web-framework, website: https://laravel.com, match: {packagist: [laravel/framework], files: [artisan]}}
+- {name: Symfony, category: web-framework, website: https://symfony.com, match: {packagist: [symfony/framework-bundle]}}
+- {name: WordPress, category: cms, website: https://wordpress.org, match: {files: [wp-config.php, wp-config-sample.php, wp-includes/version.php]}}
+- {name: Drupal, category: cms, website: https://www.drupal.org, match: {packagist: [drupal/core]}}
+- {name: Ruby on Rails, category: web-framework, website: https://rubyonrails.org, match: {rubygems: [rails]}}
+- {name: Sinatra, category: web-framework, website: https://sinatrarb.com, match: {rubygems: [sinatra]}}
+- {name: Sidekiq, category: queue, website: https://sidekiq.org, match: {rubygems: [sidekiq]}}
+- {name: Actix Web, category: web-framework, website: https://actix.rs, match: {cargo: [actix-web]}}
+- {name: Axum, category: web-framework, website: https://github.com/tokio-rs/axum, match: {cargo: [axum]}}
+- {name: Tokio, category: runtime-library, website: https://tokio.rs, match: {cargo: [tokio]}}
+- {name: Flutter, category: mobile-framework, website: https://flutter.dev, match: {files: [pubspec.yaml]}}
+- {name: PostgreSQL, category: database, website: https://www.postgresql.org, match: {npm: [pg, postgres], pypi: [psycopg2, psycopg2-binary, psycopg, asyncpg], go: [github.com/lib/pq, github.com/jackc/pgx/v5, github.com/jackc/pgx/v4], maven: [postgresql], rubygems: [pg], images: [postgres, postgis/postgis, bitnami/postgresql]}}
+- {name: MySQL, category: database, website: https://www.mysql.com, match: {npm: [mysql, mysql2], pypi: [mysqlclient, pymysql, mysql-connector-python], go: [github.com/go-sql-driver/mysql], maven: [mysql-connector-java, mysql-connector-j], rubygems: [mysql2], images: [mysql, mariadb, bitnami/mysql]}}
+- {name: SQLite, category: database, website: https://sqlite.org, match: {npm: [sqlite3, better-sqlite3], go: [github.com/mattn/go-sqlite3, modernc.org/sqlite], rubygems: [sqlite3]}}
+- {name: MongoDB, category: database, website: https://www.mongodb.com, match: {npm: [mongodb], pypi: [pymongo, motor], go: [go.mongodb.org/mongo-driver], images: [mongo, bitnami/mongodb]}}
+- {name: Redis, category: database, website: https://redis.io, match: {npm: [redis, ioredis], pypi: [redis], go: [github.com/redis/go-redis/v9, github.com/go-redis/redis/v8], rubygems: [redis], images: [redis, bitnami/redis, valkey/valkey]}}
+- {name: Elasticsearch, category: search, website: https://www.elastic.co, match: {npm: ["@elastic/elasticsearch"], pypi: [elasticsearch], images: [elasticsearch, docker.elastic.co/elasticsearch/elasticsearch]}}
+- {name: RabbitMQ, category: queue, website: https://www.rabbitmq.com, match: {npm: [amqplib], pypi: [pika], images: [rabbitmq]}}
+- {name: Apache Kafka, category: queue, website: https://kafka.apache.org, match: {npm: [kafkajs], pypi: [kafka-python, confluent-kafka], go: [github.com/segmentio/kafka-go], images: [confluentinc/cp-kafka, bitnami/kafka, apache/kafka]}}
+- {name: Nginx, category: server, website: https://nginx.org, match: {images: [nginx, nginx/nginx, bitnami/nginx], files: [nginx.conf]}}
+- {name: Docker, category: infrastructure, website: https://www.docker.com, match: {files: [Dockerfile, docker-compose.yml, docker-compose.yaml, compose.yaml]}}
+- {name: Kubernetes, category: infrastructure, website: https://kubernetes.io, match: {files: [kustomization.yaml]}}
+- {name: Helm, category: infrastructure, website: https://helm.sh, match: {files: [Chart.yaml]}}
+- {name: Terraform, category: infrastructure, website: https://www.terraform.io, match: {files: [.tf]}}

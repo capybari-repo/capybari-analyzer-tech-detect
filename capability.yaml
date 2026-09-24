@@ -1,0 +1,29 @@
+id: tech-detect
+name: Technology & Version Detector
+version: 0.1.0
+category: discovery
+summary: Detects languages, runtimes, frameworks, libraries, databases, queues, cloud SDKs and services with their versions, and flags end-of-life releases using a bundled, dated lifecycle table.
+stability: stable
+core_api: v0
+targets: [repository]
+requires: [inventory]
+optional: [fingerprint, dependencies]
+provides: [technologies]
+findings: [end-of-life, deprecated-library]
+scores: [evolution]
+cost: low
+execution:
+  local: true
+  network: none
+  ai: none
+privacy: Runs entirely locally. End-of-life data is bundled with the tool; nothing is looked up online and nothing leaves the machine.
+methodology: https://github.com/capybari/capybari-analyzer-tech-detect/blob/main/docs/methodology.md
+follow_ups:
+  - capability: vulns
+    reason: End-of-life components were found; check the dependency tree for known vulnerabilities.
+    when:
+      finding_categories: [end-of-life]
+  - capability: architecture
+    reason: Map how the detected frameworks and modules depend on each other.
+    when:
+      evidence: [technologies]

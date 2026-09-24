@@ -1,0 +1,50 @@
+{
+  "findings": [
+    "high high Python 3.7 is end-of-life",
+    "medium high Flask 1.0 is end-of-life"
+  ],
+  "technologies": [
+    {
+      "Name": "Python",
+      "Category": "language",
+      "Version": "3.7.9",
+      "EOL": "2023-06-27"
+    },
+    {
+      "Name": "Flask",
+      "Category": "web-framework",
+      "Version": "1.0",
+      "EOL": "unsupported"
+    },
+    {
+      "Name": "SQLAlchemy",
+      "Category": "orm",
+      "Version": "1.3.0",
+      "EOL": ""
+    },
+    {
+      "Name": "Gunicorn",
+      "Category": "server",
+      "Version": "19.9.0",
+      "EOL": ""
+    },
+    {
+      "Name": "Docker",
+      "Category": "infrastructure",
+      "Version": "",
+      "EOL": ""
+    },
+    {
+      "Name": "Jinja",
+      "Category": "templating",
+      "Version": "2.10",
+      "EOL": ""
+    },
+    {
+      "Name": "Requests",
+      "Category": "library",
+      "Version": "2.19.1",
+      "EOL": ""
+    }
+  ]
+}
