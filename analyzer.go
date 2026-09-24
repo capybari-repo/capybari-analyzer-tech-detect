@@ -434,13 +434,13 @@ func eolFinding(t *facts.Technology, today time.Time) *finding.Finding {
 	}
 	return &finding.Finding{
 		Dimension: finding.DimEvolution, Category: "end-of-life", Severity: sev, Confidence: conf,
-		Title:       fmt.Sprintf("%s %s is end-of-life", t.Name, key),
-		Description: desc,
-		Evidence:    ev,
-		Component:   t.Name,
-		Rule:        &finding.Rule{ID: "eol-" + strings.ToLower(strings.ReplaceAll(t.Name, " ", "-")), References: []string{p.Source}},
-		Impact:      &finding.Impact{Technical: "Unpatched vulnerabilities and increasing incompatibility with current libraries and platforms.", Business: "Security and compliance exposure that grows over time, and upgrades that get larger the longer they are postponed."},
-		Remediation: &finding.Remediation{Summary: fmt.Sprintf("Upgrade %s to a supported release line (see %s) and test the application against it.", t.Name, p.Source), Automatable: false},
+		Title:                 fmt.Sprintf("%s %s is end-of-life", t.Name, key),
+		Description:           desc,
+		Evidence:              ev,
+		Component:             t.Name,
+		Rule:                  &finding.Rule{ID: "eol-" + strings.ToLower(strings.ReplaceAll(t.Name, " ", "-")), References: []string{p.Source}},
+		Impact:                &finding.Impact{Technical: "Unpatched vulnerabilities and increasing incompatibility with current libraries and platforms.", Business: "Security and compliance exposure that grows over time, and upgrades that get larger the longer they are postponed."},
+		Remediation:           &finding.Remediation{Summary: fmt.Sprintf("Upgrade %s to a supported release line (see %s) and test the application against it.", t.Name, p.Source), Automatable: false},
 		FalsePositiveGuidance: "If the declared version is only a minimum (e.g. >=12) and production runs a newer release, update the declaration to match.",
 	}
 }
